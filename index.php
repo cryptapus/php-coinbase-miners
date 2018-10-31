@@ -220,5 +220,11 @@ function blocklist($settings) {
 <?php blocklist($settings) ?>
 </p>
 
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Please see <a href="https://github.com/cryptapus/php-coinbase-miners">php-coinbase-miners</a> to add your pool.</span>
+  </div>
+</footer>
+
 </body>
 </html>
