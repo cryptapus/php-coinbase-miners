@@ -1,7 +1,8 @@
 <?php
 /*
 
-New faucet script
+List of pool search strings and links. Please add new entries at the top. A 
+pool can have multiple 'cbstrings' as to catch different signatures.
 
 */
 return [
