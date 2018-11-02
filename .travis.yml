@@ -1,4 +1,17 @@
 language: php
+
 php:
-  - '5.6'
-  - '7.1'
+  - 5.6
+  - 7.0
+#  - hhvm
+
+## optionally set up exclusions and allowed failures in the matrix
+#matrix:
+#  exclude:
+#    - php: hhvm
+#      env: DB=pgsql  # PDO driver for pgsql is unsupported by HHVM (3rd party install for support)
+#  allow_failures:
+#    - php: 7.0
+#    - php: hhvm
+
+script: phpunit --configuration phpunit.xml --coverage-text
