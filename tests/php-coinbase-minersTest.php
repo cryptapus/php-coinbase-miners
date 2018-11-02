@@ -1,6 +1,6 @@
 <?php
 
-class php_coinbase_minersTest extends PHPUnit_Framework_TestCase {
+class php_coinbase_minersTest extends \PHPUnit\Framework\TestCase {
 
 	public function testPoolFileFormat() {
         $poolarray = include('pools.php');
