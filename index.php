@@ -72,7 +72,7 @@ function getminerinfo($cb) {
 function blocklist($settings) {
     $coin = new Bitcoin($settings['rpcusername'],$settings['rpcpassword'],
         $settings['rpchost'],$settings['rpcport']);
-    $info = $coin->getinfo();
+    $info = $coin->getblockchaininfo();
     $tipblock = $info["blocks"];
     if (array_key_exists('startblock',$_GET)) {
         $lastblock = $_GET["startblock"];
