@@ -33,7 +33,7 @@ $settings = [
     'blocksperpage' => $config['blocksperpage'],
     'latest_version' => '00',
     'explorer_link_blk' => 'https://blockbook.myralicious.com/block/',
-    'release_link' => 'https://github.com/myriadteam/myriadcoin/releases/tag/v0.14.4.1',
+    'release_link' => 'https://github.com/myriadteam/myriadcoin/releases/tag/v0.16.3.0',
     'rpchost' => $config['rpchost'],
     'rpcport' => $config['rpcport'],
     'rpcusername' => $config['rpcusername'],
@@ -95,9 +95,10 @@ function blocklist($settings) {
     print("<thead>");
     print("<tr>");
     print("<th scope='col'>Block Number</th>");
+    print("<th scope='col'>Block Time (UTC)</th>");
     print("<th scope='col'>Block Version</th>");
     print("<th scope='col'><a href=".$settings['release_link'].
-        " target='_blank'>Latest Version</a></th>");
+        " target='_blank'>Latest Block Version</a></th>");
     print("<th scope='col'>Algo</th>");
     print("<th scope='col'>PoW</th>");
     print("<th scope='col'>TX Count</th>");
@@ -109,6 +110,7 @@ function blocklist($settings) {
         $blocknum = $lastblock - $i;
         $bhash = $coin->getblockhash($blocknum);
         $block = $coin->getblock($bhash);
+        $blocktime = $block["time"];
         $blockversion = $block["version"];
         $algo = $block["pow_algo"];
         $isauxpow = false;
@@ -147,8 +149,9 @@ function blocklist($settings) {
             $printline = true;
         }
         if ($printline) {
-            print("<tr><th><a href='".$settings['explorer_link_blk'].$bhash.
-                "' target='_blank'>".$blocknum."</a></th><td>0x".
+            print("<tr><td><a href='".$settings['explorer_link_blk'].$bhash.
+                "' target='_blank'>".$blocknum."</a></td><td>".
+                gmdate("M d Y H:i:s",$blocktime)."</td><td>0x".
                 dechex($blockversion)."</th><td class='".$supgraded_class.
                 "'>".$supgraded."</th><td>".$algo."</td><td>".$saux.
                 "</td><td>".$numtxs."</td><td>".$poollink.
