@@ -227,12 +227,19 @@ function blocklist($settings) {
 </nav>
 
 <p>
+If you are a pool operator, please consider contributing your coinbase tag here: <a href="https://github.com/cryptapus/php-coinbase-miners" target="_blank">php-coinbase-miners</a>
+</p>
+
+<p>
 <?php blocklist($settings) ?>
 </p>
 
+</div>
+</div>
+
 <footer class="footer">
   <div class="container">
-    <span class="text-muted">Please see <a href="https://github.com/cryptapus/php-coinbase-miners">php-coinbase-miners</a> to add your pool.</span>
+    <span class="text-muted">Please see <a href="https://github.com/cryptapus/php-coinbase-miners" target="_blank">php-coinbase-miners</a> to add your pool.</span>
   </div>
 </footer>
 
