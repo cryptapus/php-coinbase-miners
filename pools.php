@@ -89,7 +89,7 @@ return [
     [
         'name' => 'mining-dutch.nl',
         'url'  => 'https://www.mining-dutch.nl/',
-        'cbstrings' => ['/mining-dutch/', '/Mining-Dutch/'],
+        'cbstrings' => ['/mining-dutch/', '/Mining-Dutch'],
     ],
     [
         'name' => 'btc.top',
