@@ -226,6 +226,12 @@ function blocklist($settings) {
 </div>
 </nav>
 
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+
+<h3>Myriadcoin Miners</h3>
+
 <p>
 If you are a pool operator, please consider contributing your coinbase tag here: <a href="https://github.com/cryptapus/php-coinbase-miners" target="_blank">php-coinbase-miners</a>
 </p>
@@ -234,6 +240,9 @@ If you are a pool operator, please consider contributing your coinbase tag here:
 <?php blocklist($settings) ?>
 </p>
 
+<hr/>
+
+</div>
 </div>
 </div>
 
