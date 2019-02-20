@@ -31,9 +31,9 @@ $config = include('config.php');
 
 $settings = [
     'blocksperpage' => $config['blocksperpage'],
-    'latest_version' => '00',
+    'latest_version' => '40',
     'explorer_link_blk' => 'https://blockbook.myralicious.com/block/',
-    'release_link' => 'https://github.com/myriadteam/myriadcoin/releases/tag/v0.16.3.0',
+    'release_link' => 'https://github.com/myriadteam/myriadcoin/releases/tag/v0.16.4.0',
     'rpchost' => $config['rpchost'],
     'rpcport' => $config['rpcport'],
     'rpcusername' => $config['rpcusername'],
