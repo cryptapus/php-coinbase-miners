@@ -1,7 +1,7 @@
 # php-coinbase-miners
 [![Build Status](https://travis-ci.com/cryptapus/php-coinbase-miners.svg?branch=master)](https://travis-ci.com/cryptapus/php-coinbase-miners)
 
-PHP Coinbase Miners - Examine coinbase tags for Myriadcoin
+PHP Coinbase Miners - Examine coinbase tags. Originally developed for Myriadcoin.
 
 ## Pools
 If you are a pool operator, pull requests to `pools.php` are welcome.

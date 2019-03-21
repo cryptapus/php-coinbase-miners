@@ -30,10 +30,11 @@ THE SOFTWARE.
 $config = include('config.php');
 
 $settings = [
+    'coinname' => $config['coinname'],
     'blocksperpage' => $config['blocksperpage'],
-    'latest_version' => '40',
-    'explorer_link_blk' => 'https://blockbook.myralicious.com/block/',
-    'release_link' => 'https://github.com/myriadteam/myriadcoin/releases/tag/v0.16.4.0',
+    'latest_version' => $config['latest_blk_version_8bit_lsbhex'],
+    'explorer_link_blk' => $config['explorer_link_blk'],
+    'release_link' => $config['release_link'],
     'rpchost' => $config['rpchost'],
     'rpcport' => $config['rpcport'],
     'rpcusername' => $config['rpcusername'],
@@ -128,7 +129,8 @@ function blocklist($settings) {
         if ($pool["name"] == "unknown") {
             $poollink = "";
         } else {
-            $poollink = "<a href='".$pool["url"]."'>".$pool["name"]."</a>";
+            $poollink = "<a href='".$pool["url"]."' target='_blank'>".
+                $pool["name"]."</a>";
         }
         if ($isauxpow) $saux = 'AuxPow'; else $saux = 'PoW';
         $supgraded_class = 'bg-danger';
@@ -186,7 +188,7 @@ function blocklist($settings) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<title>Myriad Miners</title>
+<title><?php print($settings['coinname']) ?> Miners</title>
 </head>
 <body>
 
@@ -199,7 +201,7 @@ function blocklist($settings) {
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="navbar-brand" href=".">Myriadcoin Miners</a>
+  <a class="navbar-brand" href="."><?php print($settings['coinname']) ?> Miners</a>
 </div>
 
 <div class="collapse navbar-collapse" id="myNavbar">
@@ -230,7 +232,7 @@ function blocklist($settings) {
 <div class="row">
 <div class="col-sm-12">
 
-<h3>Myriadcoin Miners</h3>
+<h3><?php print($settings['coinname']) ?> Miners</h3>
 
 <p>
 If you are a pool operator, please consider contributing your coinbase tag here: <a href="https://github.com/cryptapus/php-coinbase-miners" target="_blank">php-coinbase-miners</a>
