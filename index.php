@@ -27,6 +27,8 @@ THE SOFTWARE.
 ====================
 */
 
+include('utils.php');
+
 $config = include('config.php');
 
 $settings = [
@@ -44,12 +46,6 @@ $settings = [
 require_once('easybitcoin.php');
 
 date_default_timezone_set('UTC');
-
-function hex2str($hex) {
-    $str = '';
-    for($i=0;$i<strlen($hex);$i+=2) $str .= chr(hexdec(substr($hex,$i,2)));
-    return $str;
-}
 
 function getminerinfo($cb) {
     $name = 'unknown';
@@ -101,8 +97,11 @@ function blocklist($settings) {
     print("<th scope='col'><a href=".$settings['release_link'].
         " target='_blank'>Latest Block Version</a></th>");
     print("<th scope='col'>Algo</th>");
+    print("<th scope='col'>Difficulty</th>");
     print("<th scope='col'>PoW</th>");
     print("<th scope='col'>TX Count</th>");
+    print("<th scope='col'>Block Size</th>");
+    print("<th scope='col'>Block Weight</th>");
     print("<th scope='col'>Mined By</th>");
     print("<th scope='col'>Coinbase String</th>");
     print("</tr>");
@@ -114,6 +113,9 @@ function blocklist($settings) {
         $blocktime = $block["time"];
         $blockversion = $block["version"];
         $algo = $block["pow_algo"];
+        $difficulty = $block["difficulty"];
+        $blocksize = $block["size"];
+        $blockweight = $block["weight"];
         $isauxpow = false;
         $numtxs = sizeof($block["tx"]);;
         if (array_key_exists('auxpow',$block)) $isauxpow = true;
@@ -155,8 +157,11 @@ function blocklist($settings) {
                 "' target='_blank'>".$blocknum."</a></td><td>".
                 gmdate("M d Y H:i:s",$blocktime)."</td><td>0x".
                 dechex($blockversion)."</th><td class='".$supgraded_class.
-                "'>".$supgraded."</th><td>".$algo."</td><td>".$saux.
-                "</td><td>".$numtxs."</td><td>".$poollink.
+                "'>".$supgraded."</th><td>".$algo."</td><td>".
+                num2sci(floatval($difficulty),3).
+                "</td><td>".$saux."</td><td>".$numtxs."</td><td>".
+                num2sci(floatval($blocksize))."</td><td>".
+                num2sci(floatval($blockweight))."</td><td>".$poollink.
                 "</td><td>".hex2str($cb)."</td></tr>");
         }
     }
