@@ -89,7 +89,7 @@ return [
     [
         'name' => 'nlpool.nl',
         'url'  => 'https://nlpool.nl/',
-        'cbstrings' => ['NLPOOL'],
+        'cbstrings' => ['NLPOOL', 'NLPool'],
     ],
     [
         'name' => 'mining-dutch.nl',
