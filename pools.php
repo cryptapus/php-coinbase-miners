@@ -102,9 +102,14 @@ return [
         'cbstrings' => ['/mining-dutch/', '/Mining-Dutch'],
     ],
     [
+        'name' => 'Easy2Mine',
+        'url'  => 'https://easy2mine.com/',
+        'cbstrings' => ['/E2M & BTC.TOP/'],
+    ],
+    [
         'name' => 'btc.top',
         'url'  => 'http://btc.top/',
-        'cbstrings' => ['BTC.TOP'],
+        'cbstrings' => ['/BTC.TOP/'],
     ],
     [
         'name' => 'multipool.us',
