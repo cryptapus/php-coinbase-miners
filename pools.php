@@ -7,6 +7,11 @@ pool can have multiple 'cbstrings' as to catch different signatures.
 */
 return [
     [
+        'name' => 'BitHash',
+        'url'  => 'https://bit-hash.cloud/',
+        'cbstrings' => ['/1THash&58COIN/'],
+    ],
+    [
         'name' => 'thepool.life',
         'url'  => 'https://thepool.life/',
         'cbstrings' => ['thepool.life'],
