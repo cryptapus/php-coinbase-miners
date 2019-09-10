@@ -7,6 +7,11 @@ pool can have multiple 'cbstrings' as to catch different signatures.
 */
 return [
     [
+        'name' => 'p2pool StPburg',
+        'url'  => 'http://p2p-spb.xyz:5213/static/',
+        'cbstrings' => ['/p2p-spb.xyz'],
+    ],
+    [
         'name' => 'BitHash',
         'url'  => 'https://bit-hash.cloud/',
         'cbstrings' => ['/1THash&58COIN/'],
