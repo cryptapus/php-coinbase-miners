@@ -244,7 +244,37 @@ If you are a pool operator, please consider contributing your coinbase tag here:
 </p>
 
 <p>
-<?php blocklist($settings) ?>
+Raw node information: <a href=".?action=getblockchaininfo">getblockchaininfo</a> <a href=".?action=getmempoolinfo">getmempoolinfo</a> <a href=".?action=getmininginfo">getmininginfo</a>
+</p>
+
+<p>
+<?php
+switch ($_GET["action"]) {
+    case "getblockchaininfo":
+        $coin = new Bitcoin($settings['rpcusername'],$settings['rpcpassword'],
+            $settings['rpchost'],$settings['rpcport']);
+        $info = $coin->getblockchaininfo();
+        print("<pre>");
+        print_r($info);
+        print("</pre>");
+    case "getmempoolinfo":
+        $coin = new Bitcoin($settings['rpcusername'],$settings['rpcpassword'],
+            $settings['rpchost'],$settings['rpcport']);
+        $info = $coin->getmempoolinfo();
+        print("<pre>");
+        print_r($info);
+        print("</pre>");
+    case "getmininginfo":
+        $coin = new Bitcoin($settings['rpcusername'],$settings['rpcpassword'],
+            $settings['rpchost'],$settings['rpcport']);
+        $info = $coin->getmininginfo();
+        print("<pre>");
+        print_r($info);
+        print("</pre>");
+    default:
+        blocklist($settings);
+}
+?>
 </p>
 
 <hr/>
