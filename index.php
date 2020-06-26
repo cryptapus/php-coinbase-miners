@@ -255,7 +255,7 @@ switch ($_GET["action"]) {
             $settings['rpchost'],$settings['rpcport']);
         $info = $coin->getblockchaininfo();
         print("<pre>");
-        print_r($info);
+        print(json_encode($info, JSON_PRETTY_PRINT));
         print("</pre>");
         break;
     case "getmempoolinfo":
@@ -263,7 +263,7 @@ switch ($_GET["action"]) {
             $settings['rpchost'],$settings['rpcport']);
         $info = $coin->getmempoolinfo();
         print("<pre>");
-        print_r($info);
+        print(json_encode($info, JSON_PRETTY_PRINT));
         print("</pre>");
         break;
     case "getmininginfo":
@@ -271,7 +271,7 @@ switch ($_GET["action"]) {
             $settings['rpchost'],$settings['rpcport']);
         $info = $coin->getmininginfo();
         print("<pre>");
-        print_r($info);
+        print(json_encode($info, JSON_PRETTY_PRINT));
         print("</pre>");
         break;
     default:
