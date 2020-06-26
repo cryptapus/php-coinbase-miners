@@ -257,6 +257,7 @@ switch ($_GET["action"]) {
         print("<pre>");
         print_r($info);
         print("</pre>");
+        break;
     case "getmempoolinfo":
         $coin = new Bitcoin($settings['rpcusername'],$settings['rpcpassword'],
             $settings['rpchost'],$settings['rpcport']);
@@ -264,6 +265,7 @@ switch ($_GET["action"]) {
         print("<pre>");
         print_r($info);
         print("</pre>");
+        break;
     case "getmininginfo":
         $coin = new Bitcoin($settings['rpcusername'],$settings['rpcpassword'],
             $settings['rpchost'],$settings['rpcport']);
@@ -271,6 +273,7 @@ switch ($_GET["action"]) {
         print("<pre>");
         print_r($info);
         print("</pre>");
+        break;
     default:
         blocklist($settings);
 }
