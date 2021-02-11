@@ -7,6 +7,11 @@ pool can have multiple 'cbstrings' as to catch different signatures.
 */
 return [
     [
+        'name' => '1THash.top',
+        'url'  => 'https://www.1thash.top/top/index',
+        'cbstrings' => ['1THash'],
+    ],
+    [
         'name' => 'p2p-spb.xyz',
         'url'  => 'http://p2p-spb.xyz:6002/static/',
         'cbstrings' => ['p2p-spb.xyz'],
